@@ -1,0 +1,27 @@
+<launch>
+
+<node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create0" args="_vrpn_server_ip:=192.168.2.2" required="true"/>
+<!--only works when the specific create0 is on-->
+<!--node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create1" args="_vrpn_server_ip:=192.168.2.2" required="true"/-->
+<!--node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create2" args="_vrpn_server_ip:=192.168.2.2" required="true"/-->
+
+<!-- setup world frame -->
+<node pkg="create_tf_setup" name="world_frame" type="tf_world"/>
+
+<!-- visualize -->
+<!-- node pkg="rviz" type="rviz" name="rviz" args="-d $(find create_tf_setup)/rviz/config.rviz"/-->
+
+</launch>
+
+
+
+<!-- node pkg="ros_vrpn_client" name="create0" type="ros_vrpn_client" args="_vrpn_server_ip:=192.168.2.3" required="true" /-->
+<!-- node pkg="ros_vrpn_client" name="create0" type="ros_vrpn_client" args="_vrpn_server_ip:=192.168.2.9" required="true" /-->
+<!-- node pkg="ros_vrpn_client" name="create0" type="ros_vrpn_client" args="_vrpn_server_ip:=192.168.2.2" required="true" /--> 
+<!-- node pkg="ros_vrpn_client" name="create0" type="ros_vrpn_client" args="_vrpn_server_ip:=192.168.2.1" required="true" /--> 
+<!-- second create robot-->
+<!--node pkg="ros_vrpn_client" name="create1" type="ros_vrpn_client" args="_vrpn_server_ip:=192.168.2.3" required="true"/-->
+
+<!-- getting create position in world frame -->
+<!-- node pkg="create_tf_setup" type="create_tf_listener"
+          name="listener" output="screen" /-->

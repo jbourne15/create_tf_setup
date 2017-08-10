@@ -1,0 +1,15 @@
+<launch>
+<!-- include file="$(find weather_board_driver)/launch/wb_data_center.launch"/ -->
+
+<node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create0" args="_vrpn_server_ip:=192.168.2.2" required="true"/>
+<!--only works when the specific create0 is on-->
+<!--node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create1" args="_vrpn_server_ip:=192.168.2.2" required="true"/-->
+<!--node pkg="create_tf_setup" type="ros_vrpn_client_te" name="create2" args="_vrpn_server_ip:=192.168.2.2" required="true"/-->
+
+<!-- setup world frame -->
+<node pkg="create_tf_setup" name="world_frame" type="tf_world"/>
+
+<!-- visualize -->
+<!-- node pkg="rviz" type="rviz" name="rviz" args="-d $(find create_tf_setup)/rviz/config.rviz"/-->
+
+</launch>
